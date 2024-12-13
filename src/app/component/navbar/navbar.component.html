@@ -5,7 +5,7 @@
 </style>
 
 <header>
-  <nav>
+  <nav [class.scrolled]="isScrolled">
     <div class="logoPrincipal">
       <a [routerLink]="['/home']"  ><img src="logoPrincipal.png" alt="logo empresa"></a>
     </div>
