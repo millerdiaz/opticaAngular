@@ -16,8 +16,7 @@
   margin-top: 40px;
 }
 .marcas img:hover{
-  scale: 1;
-  width: 110px;
+  
   cursor: pointer;
 
 }
@@ -84,6 +83,49 @@
 }
 
 .verCategoria:hover {
-  color: #CCE3DE; /* Efecto al pasar el mouse */
+  color: #CCE3DE;
+}
+
+
+.carousel-track img {
+
+
+  width: 1348px;
+  height: 100%;
+  flex-shrink: 0;
+
+}
+.carousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.carousel-track {
+  display: flex;
+  animation: slide 20s infinite;
+}
+@keyframes slide {
+  0% {
+      transform: translateX(0); /* Posición inicial (primera imagen) */
+  }
+  29.41% {
+      transform: translateX(0); /* Mantiene la imagen*/
+  }
+  33.33% {
+      transform: translateX(-1346px); /* pasa a la siguiente imagen */
+  }
+  62.74% {
+      transform: translateX(-1346px); /* mantiene la imagen */
+  }
+  66.66% {
+      transform: translateX(-2695px); /* pasa a la siguiente imagen */
+  }
+  96.08% {
+      transform: translateX(-2695px); /* mantiene la imagen */
+  }
+  100% {
+      transform: translateX(0); /* Regresar a la primera imagen */
+  }
 }
 
