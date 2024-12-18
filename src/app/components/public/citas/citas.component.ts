@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
+import { CitasService } from '../../../services/citas.service';
 
 @Component({
   selector: 'app-citas',
@@ -15,7 +16,8 @@ export class CitasComponent {
   selectedTienda: string = '';
   selectedTipoCita: string = '';
   selectedFecha: string = '';
-
+  constructor (private citas: CitasService ){
+  }
   // Métodos para actualizar las variables cuando se selecciona un valor
   selectDepartamento(departamento: string) {
     this.selectedDepartamento = departamento;
@@ -39,9 +41,11 @@ export class CitasComponent {
       departamento: this.selectedDepartamento,
       ciudad: this.selectedCiudad,
       tienda: this.selectedTienda,
-      tipoCita: this.selectedTipoCita,
+      tipoDeCita: this.selectedTipoCita,
       fecha: this.selectedFecha
     };
+     this.addCita(datosCita);
+
     console.log("Cita Agendada:", datosCita);
 
     // Aquí puedes enviar los datos a un servicio o backend
@@ -49,4 +53,12 @@ export class CitasComponent {
   }
 
 
+    // metodo para agregar cita
+
+    addCita(data:any){
+      this.citas.createCita(data).subscribe(res=> {console.log(res)}
+      )
+    }
 }
+
+

@@ -1,0 +1,770 @@
+*{  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+nav {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #A4C3B2; /* Color original */
+  border-radius: 5px;
+  width: 1320px;
+  height: 66px;
+  margin: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+nav.scrolled {
+  opacity: 1;; /* Nuevo color cuando se hace scroll */
+}
+
+
+
+.logoPrincipal img{
+  padding-left: 10px;
+  width: 139px;
+  padding-bottom: 10px;
+
+}
+
+.catalogo{
+  position: relative;
+  display: inline-block;
+  color: #1D3557;
+  font-weight: bold;
+
+
+}
+.opciones{
+  background-color:#EAF4F4 ;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 177px;
+  height: 166px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  border-radius: 4px;
+  z-index: 1;
+
+
+}
+.catalogo:hover .opciones{
+  display:flex;
+  flex-direction: column;
+
+}
+.opciones a:hover{
+
+  cursor: pointer;
+  background-color: #A4C3B2;
+  border-radius: 4px;
+
+
+}
+.examenVisual{
+  position: relative;
+  display: inline-block;
+  color: #1D3557;
+
+
+}
+.opcionesDos{
+  background-color:#EAF4F4 ;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 160px;
+  height: 101px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  border-radius: 4px;
+  z-index: 1000;
+}
+.opcionesDos a:hover{
+  cursor: pointer;
+  background-color: #A4C3B2;
+  border-radius: 4px;
+}
+.examenVisual:hover .opcionesDos{
+  display:flex;
+  flex-direction: column;
+}
+
+.promociones{
+  position: relative;
+  display: inline-block;
+  color: #1D3557;
+  font-weight: bold;
+}
+.opcionesTres{
+  background-color:#EAF4F4 ;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 150px;
+  height: 134px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  border-radius: 4px;
+}
+.opcionesTres a:hover{
+  cursor: pointer;
+  background-color: #A4C3B2;
+  border-radius: 4px;
+
+}
+.promociones:hover .opcionesTres{
+  display:flex;
+  flex-direction: column;
+}
+
+.botonesNav{
+  display: flex;
+
+}
+.botonesNav a {
+  padding-top: 9px;
+  font-weight:600;
+}
+
+
+.botonesNav button{
+  padding-left: 90px;
+  border: none;
+  background-color: #A4C3B2;
+
+}
+button a{
+  text-decoration: none;
+  color: #1D3557;
+}
+
+
+.carritoDeCompras{
+  margin-right: 30px;
+  cursor: pointer;
+}
+.carritoDeCompras i{
+  font-size: 30px;
+  color: #1D3557;
+
+}
+.buscador{
+  display: flex;
+  align-items: center;
+}
+#buscarProducto{
+  text-align: center;
+  border: none;
+  width: 300px;
+  height: 30px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+
+}
+
+#buscarProducto::placeholder{
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.lupa{
+
+  padding: 0;
+  border: none;
+  margin-left: 5px;
+}
+
+.lupa i{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color:#A4C3B2;
+  font-size: 27px;
+  border: none;
+}
+
+/* Hasta Aquí va la Nav*/
+
+body{
+  background-color: #EAF4F4;
+}
+
+
+.imagenesPromocion img{
+  border-radius: 7px;
+  width: 380px;
+}
+.imagenesPromocion {
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  gap: 100px;
+  padding-top: 100px;
+
+}
+.descuento{
+  background-color:#1D3557;
+  color: white;
+  display: flex;
+  position: absolute;
+  z-index: 20;
+  border: none;
+  font-family: overpass;
+  padding: 12px;
+  border-radius: 10px;
+ font-weight: 100px;
+  margin-left: 286px;
+
+}
+
+.imagenesPromocion img:hover{
+  cursor: pointer;
+  box-shadow: 4px 10px 10px #6B9080;
+
+}
+.textoPromocion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: overpass;
+  margin-top: 30px;
+
+}
+
+.textoPromocion
+
+
+.marcasDos{
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: center;
+  margin-top: 30px;
+}
+.marcasDos img{
+width: 365px;
+height: 168px;
+display: flex;
+justify-content: center;
+margin-top: 10px;
+}
+.subtitulo{
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.tituloPromociones{
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  color: #1D3557;
+
+  border-bottom: solid 1px #1D3557;
+  width: 1000px;
+}
+.carousel img{
+      border-radius: 7px;
+      width: 399px;
+      height: 602px;
+}
+.DosPorUno img {
+
+
+  border-radius: 10px;
+
+}
+.carousel-track{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  width: 380px;
+  height: 570px;
+  border-radius:10px ;
+  margin-right: 20px;
+
+}
+.carousel-track:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  transform: scale(1);
+
+}
+.carousel{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.carousel h2{
+  color: #1D3557;
+}
+.carousel p{
+  color: #1D3557;
+}
+.DosPorUno{
+
+
+
+  border-radius: 10px;
+}
+.promocionDerecha{
+
+  padding-top: 10px;
+
+
+}
+
+.primeraDerecha{
+
+
+  border-radius: 5px;
+  margin-top: 8px;
+
+}
+.primeraDerecha:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  transform: scale(1);
+
+}
+.primeraDerecha img{
+  width: 680px;
+
+  border-radius: 6px;
+
+
+}
+.segundaDerecha img{
+  width: 1095px;
+  border-radius: 6px;
+  justify-self: center;
+
+
+
+}
+.segundaDerecha{
+  width: 1095px;
+  margin-top: 10px;
+
+  border-radius: 5px;
+}
+.segundaDerecha:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  transform: scale(1);
+
+}
+
+
+
+.floating-bubble i{
+
+  font-size: 35px;
+  border-radius: 50%;
+  color: white;
+  padding-top: 8px;
+
+}
+
+.floating-bubble{
+
+ border: none;
+ padding: 0;
+ border-radius: 50%;
+ width: 60px;
+ height: 60px;
+ background-color: #6B9080;
+ box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.1);
+ cursor: pointer;
+ position: relative;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.contact {
+ display:none;
+ position: absolute;
+ left: 0;
+ padding: 2px;
+ border-radius: 50%;
+ z-index: 100;
+ border: none;
+ bottom: 100%;
+ margin-bottom: 3px;
+}
+.contact a{
+ border-radius: 50%;
+}
+
+.floating-bubble:hover .contact {
+ display: block;
+ border: none;
+
+
+}
+.floating-bubble:hover{
+ box-shadow: 1px 1px 4px #1D3557;
+
+}
+.contact:hover{
+ display: flex;
+ justify-content: space-around;
+ flex-direction: row;
+
+
+}
+.contact button{
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ border: none;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 20px;
+}
+.whatsapp i{
+ border: none;
+ color:#6B9080 ;
+
+
+}
+.whatsapp i:hover{
+ color: white;
+
+}
+.contact button:hover{
+ display: flex;
+ background-color:#6B9080 ;
+
+}
+.facebook i{
+ border: none;
+ color:#6B9080 ;
+ padding-left: 2px;
+
+}
+.facebook i:hover{
+color: white;
+}
+.instagram i{
+border: none;
+color:#6B9080 ;
+padding-left: 2px;
+
+
+}
+.instagram i:hover{
+color: white;
+}
+.contenedorBubble{
+ position: fixed;
+ left: 1240px;
+ bottom: 100px;
+ z-index: 1000;
+ margin-bottom: 10px;
+}
+
+.floating-bubble{
+ position:fixed;
+ z-index: 1000;
+}
+
+.terminosYcondiciones{
+  width: 331px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+
+}
+footer{
+  width: 1348px;
+
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  display: flex;
+  background-color:#CCE3DE;
+}
+footer a{
+  text-decoration: none;
+  color:#1D3557;
+}
+.contactanos{
+  width: 331px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+.linkInteres{
+  width: 331px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+@media (min-width: 600px) and (max-width: 1200px) {
+
+
+  .tituloPromociones{
+  width: 100%;
+}
+header nav {
+  flex-direction: row;
+  width: 100%;
+}
+.opciones{
+  top:50px;
+}
+.opcionesDos{
+  top:50px;
+  z-index: 1000;
+}
+.opcionesTres{
+  top:50px;
+}
+
+.buscador {
+  width: 60%;
+  margin: 10px 0;
+}
+#buscarProducto{
+    width: 212px;
+    margin-left: 20px;
+}
+.botonesNav {
+display: flex;
+justify-content: row;
+margin-top: 0;
+width: 100%;
+ height:100%;
+
+}
+.botonesNav button{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+}
+
+.catalogo{
+    display: flex;
+    align-items: center;
+}
+.examenVisual{
+    display: flex;
+    align-items: center;
+}
+.promociones{
+    display: flex;
+    align-items: center;
+}
+.DosPorUno{
+  width: 100%;
+}
+.DosPorUno img{
+  width: 100%;
+}
+.carousel{
+  width: 100%;
+}
+.imagenesPromocion{
+  padding: 0;
+}
+.promocionDerecha img{
+  width: 100%;
+}
+.primeraDerecha{
+  width: 100%;
+}
+.segundaDerecha{
+  width: 100%;
+}
+.promocionDerecha{
+  margin-right: 20px;
+}
+
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+footer a{
+    width: 100%
+}
+.accesosDirectos{
+    display: flex;
+    width: 100%;
+}
+.accesosDirectos img{
+    width: 150px;
+    height: 200px;
+}
+.opciones a{
+    font-size: 100%;
+}
+.marcasDos {
+    display: none;
+}
+
+.contenedorBubble{
+    display: flex;
+    position:sticky;
+    width: 100%;
+    z-index: 1000;
+
+}
+.floating-bubble{
+  bottom: 60px;
+}
+}
+
+
+@media (min-width: 330px) and (max-width: 600px){
+
+
+
+  #buscarProducto,
+  .lupa, .lupa i
+  {
+      display: none;
+  }
+
+  .tituloPromociones{
+      width: 95%;
+      margin-bottom: 20px;
+
+  }
+
+  .logoPrincipal img{
+      width: 100px;
+      height: auto;
+      padding-left: 0;
+  }
+
+  nav{
+      display: flex;
+      justify-content: center;
+      width: 90%;
+  }
+  .botonesNav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+  }
+
+  .botonesNav button{
+      padding-left: 1%;
+  }
+  .carritoDeCompras{
+      display: flex;
+      justify-content:center;
+      position:end;
+  }
+  .carritoDeCompras i{
+      font-size: 25px;
+      padding-left: 8px;
+      width: 10px;
+  }
+    nav{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  }
+  .DosPorUno{
+      width: 90%;
+  }
+  .DosPorUno img{
+      width: 100%;
+  }
+  .promocionDerecha {
+      width: 90%;
+    }
+    .primeraDerecha{
+      width: 95%;
+
+    }
+    .primeraDerecha img{
+      width: 100%;
+    }
+    .segundaDerecha{
+      width: 95%;
+    }
+    .segundaDerecha img{
+      width: 100%;
+    }
+    .carousel-track{
+      width: 100%;
+      margin-left: 10px;
+    }
+
+    footer{
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+  }
+  footer a{
+      font-size: 15px;
+  }
+
+  .floating-bubble{
+      position:fixed;
+      z-index: 1000;
+  }
+  .contenedorBubble{
+      position: sticky;
+
+  }
+
+  footer a{
+      display: none;
+      flex-wrap: wrap;
+
+  }
+  footer h4{
+      font-size: large;
+
+  }
+
+  .terminosYcondiciones{
+      height: 30px;
+  }
+  .contactanos{
+      height: 30px;
+  }
+  .linkInteres{
+      height: 30px;
+  }
+
+}
