@@ -16,6 +16,7 @@ export class CitasComponent {
   selectedTienda: string = '';
   selectedTipoCita: string = '';
   selectedFecha: string = '';
+  selectedEspecialista: String='';
   constructor (private citas: CitasService ){
   }
   // Métodos para actualizar las variables cuando se selecciona un valor
@@ -35,6 +36,10 @@ export class CitasComponent {
     this.selectedTipoCita = tipoCita;
   }
 
+  selectEspecialista(especialista: string){
+    this.selectedEspecialista = especialista;
+  }
+
   // Método para recolectar toda la información y mostrarla en consola
   agendarCita() {
     const datosCita = {
@@ -42,6 +47,7 @@ export class CitasComponent {
       ciudad: this.selectedCiudad,
       tienda: this.selectedTienda,
       tipoDeCita: this.selectedTipoCita,
+      especialista: this.selectedEspecialista,
       fecha: this.selectedFecha
     };
      this.addCita(datosCita);

@@ -1,6 +1,10 @@
 
 
 /* Hasta Aquí va la Nav*/
+*{  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 
 .main{
@@ -21,6 +25,7 @@
 .pasosAgendamento{
   margin-top: 20px;
   display: flex;
+  padding: 30px;
 
 }
 .tiendaRelogAgenda{
@@ -38,6 +43,7 @@
 .pasosAgendamento{
 
   flex-wrap: wrap;
+  padding: 30px;
 
 }
 
@@ -70,11 +76,12 @@
 .contenido{
   width: 1195px;
   height: 106px;
+  margin: 10px;
 
-  margin-top: 4px;
   border: none;
   padding: 10px;
   font-family: overpass;
+
 
 }
 .botonesDcT {
@@ -112,6 +119,7 @@
 h2{
   margin-top: 40px;
   margin-left: 14px;
+  justify-content: center;
 }
 
 .boton{
@@ -150,19 +158,20 @@ input{
       font-size: 20px;
 
   }
-
   .contenido{
-      border-color: none;
-      max-width: 900px;
-      height: 200px;
-      margin: 0px;
-      /* flex-wrap:wrap-reverse ; */
-  }
+    max-width: 400px;
+    height: 230px;
+    min-width: 400px;
+    margin: 40px;
+    border-color: none;
+    /* flex-wrap:wrap-reverse ; */
+}
+
   .pasosAgendamento{
       flex-wrap: wrap;
   }
 
-}
+
 
 .pointer{
 
@@ -178,13 +187,7 @@ input{
       flex-direction: column;
 
   }
-  .contenido{
-      max-width: 400px;
-      height: 230px;
-      min-width: 400px;
-      margin: 0px;
-      /* flex-wrap:wrap-reverse ; */
-  }
+
 
 }
 @media (max-width:400px) {
@@ -258,3 +261,4 @@ footer{
 
 
 
+}
