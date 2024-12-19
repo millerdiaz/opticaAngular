@@ -18,32 +18,59 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   userServices = inject(UsersService);
   formLogin! : FormGroup
+  users!: any
   constructor(private fb : FormBuilder, private router: Router) {
     this.formLogin = this.fb.group({
-      correo : ['', [Validators.required, Validators.email]],
+      correo: ['', [Validators.required, Validators.email]],
       contrasena: ['', [Validators.required]]
     })
   }
 
     ngOnInit() {
-      if (sessionStorage.getItem('token')) {
-          this.router.navigate(['home'])
-      }
+      Swal.fire({
+        icon: "error",
+        title: "Sesión inválida",
+        text: "Por favor, inicie sesión nuevamente."
+      });
+
+      this.userServices.getUsers().subscribe({
+        next: (resApi: any) => {
+          console.log(resApi);
+          this.users = resApi;
+        },
+        error: (error: any) => {
+          console.log('Error al verificar usuario:', error);
+          this.router.navigate(['/login']);
+          Swal.fire({
+            icon: "error",
+            title: "Sesión inválida",
+            text: "Por favor, inicie sesión nuevamente."
+          });
+        }
+      });
+
+
+
   }
 
 
 login() {
+
+  console.log(this.formLogin.value);
+
   if (this.formLogin.valid) {
       this.userServices.session(this.formLogin.value).subscribe({
           next:(resApi:any)=> {
               let token = resApi
-              sessionStorage.setItem('token', token)
+              sessionStorage.setItem('token', JSON.stringify (token))
+              this.ngOnInit()
+              this.router.navigate(['home'])
+
               Swal.fire({
                   icon:"success",
                   title:"Bienvenido!",
                   text:`${resApi}`
               })
-              this.router.navigate(['home'])
           },
           error:(error:any)=>{
               console.log(error);

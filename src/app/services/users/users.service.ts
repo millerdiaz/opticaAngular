@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Token } from '@angular/compiler';
+// import { Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,13 +7,13 @@ import { Injectable } from '@angular/core';
 })
 export class UsersService {
   apiUrl: string = "http://localhost:2000/api"
-  token: any = sessionStorage.getItem('token')
+  // token: any = sessionStorage.getItem('token')
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getUsers () {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
-
+    const headers = new HttpHeaders()
+// .set('Authorization', `Bearer ${this.token}`)
     return this.http.get(`${this.apiUrl}/users`, {headers})
   }
 
@@ -29,11 +29,11 @@ export class UsersService {
     return this.http.put(`${this.apiUrl}/updateuser/${id}`, body)
   }
 
-  getOneUSer (id :string) {
+  getOneUser (id :string) {
     return this.http.get(`${this.apiUrl}/user/${id}`)
   }
   session(body: any) {
-    return this.http.post(`${this.apiUrl}/session`, body)
+    return this.http.post(`${this.apiUrl}/inicioDeSesion`, body)
   }
 
 }
