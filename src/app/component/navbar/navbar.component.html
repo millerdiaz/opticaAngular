@@ -44,10 +44,10 @@
        </div>
       </button>
 
-      <button class="inicioSesion"><a href="../html/promociones.html">Iniciar sesion</a>
+      <button class="inicioSesion"><a [routerLink]="['/login']">Iniciar sesion</a>
         <div class="opcionCuatro">
-          <a href="../html/promociones.html">Inicia sesión</a>
-          <a href="../html/promociones.html">Registrate</a>
+          <a [routerLink]="['/login']">Inicia sesión</a>
+          <a [routerLink]="['/registro']">Registrate</a>
 
         </div>
        </button>
@@ -58,6 +58,15 @@
     <div class="carritoDeCompras">
       <a href="./checkout.html"><i class="bi bi-cart4"></i></a>
     </div>
+
+    <!-- @if (!estado) {
+      <li class="nav-item">
+          <a class="nav-link" href="" routerLink="/inicioSesion">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" routerLink="/register">Register</a>
+        </li>
+    } -->
   </nav>
 
 </header>

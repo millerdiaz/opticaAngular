@@ -1,0 +1,33 @@
+.loginform {
+  margin-top: 150px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.loginform{
+  margin-top: 8rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.form-container {
+  width: 320px;
+  border-radius: 0.75rem;
+  background-color: #a4c3b2;
+  padding: 2rem;
+  color: #1D3557;
+}
+
+.title {
+  text-align: center;
+}
+
+
+
+
+
+.sign{
+  justify-content: center;
+  background-color: #1D3557;
+}

@@ -1,0 +1,27 @@
+<div class="formregistro">
+  <div class="d-flex justify-content-center my-5 align-items-center my-5">
+      <div class="form-container">
+          <p class="title">Registrate</p>
+          <form [formGroup]="formulario" class="form">
+            <div class="input-group mb-2">
+              <label for="username">Nombre</label>
+              <input formControlName="nombre" type="text" name="username" id="username" placeholder="">
+            </div>
+            <div class="input-group mb-2">
+              <label for="username">Apellido</label>
+              <input formControlName="nombre" type="text" name="username" id="username" placeholder="">
+            </div>
+            <div class="input-group mb-2">
+                <label for="email">Correo electrónico</label>
+                <input formControlName="email" type="email" name="email" id="email" placeholder="">
+            </div>
+            <div class="input-group mb-2">
+                <label for="password">Contraseña</label>
+                <input formControlName="password" type="password" name="password" id="password" placeholder="">
+            </div>
+            <button (click)="registro()" class="sign">Registrate</button>
+        </form>
+        <p class="inicioSesion">Do you have an account?
+          <a  [routerLink]="['/login']" class="">Iniciar sesión</a></p>
+  </div>
+</div>

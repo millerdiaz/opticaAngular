@@ -1,0 +1,20 @@
+<div class="loginform">
+  <div class="d-flex justify-content-center my-5">
+    <div class="form-container">
+        <p class="title">Inicio de sesión</p>
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">Esta información no será compartida</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input type="contrasena" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    <p class="signup">No tienes una cuenta?
+      <a rel="noopener noreferrer" [routerLink]="['/registro']" class="">Registrate</a>
+  </p>
+  </form>
+</div>
