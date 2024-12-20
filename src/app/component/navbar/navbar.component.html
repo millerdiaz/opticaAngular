@@ -48,6 +48,7 @@
         <div class="opcionCuatro">
           <a [routerLink]="['/login']">Inicia sesión</a>
           <a [routerLink]="['/registro']">Registrate</a>
+          <!-- <a [routerLink]="['/home']">Cerrar sesión</a> -->
 
         </div>
        </button>
@@ -56,17 +57,24 @@
 
 
     <div class="carritoDeCompras">
-      <a href="./checkout.html"><i class="bi bi-cart4"></i></a>
+      <a [routerLink]="['/checkout']"><i class="bi bi-cart4"></i></a>
     </div>
 
     <!-- @if (!estado) {
       <li class="nav-item">
-          <a class="nav-link" href="" routerLink="/inicioSesion">Login</a>
+          <a class="nav-link" [routerLink]="'inicioSesion'">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" routerLink="/register">Register</a>
+          <a class="nav-link" [routerLink]="'registro'">Register</a>
+        </li>
+    }
+    @if (estado) {
+        <li class="nav-item">
+          <a class="nav-link " (click)="logout()" type="button">Logout</a>
         </li>
     } -->
+
+
   </nav>
 
 </header>

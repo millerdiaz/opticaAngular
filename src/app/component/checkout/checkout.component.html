@@ -1,0 +1,78 @@
+<nav aria-label="Breadcrumb">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/catalogo">catalogo</a></li>
+    <li><a href="/">gafas</a></li>
+    <li>carritoDeCompras</li>
+  </ul>
+</nav>
+<div class="checkout">
+
+    <div class="container-izquierdo">
+      <div class="gafas1">
+        <img class="rayban" src="../html/imagenes/0rb4378__rayban.jpg"><br>
+        <p class="descripcionRay"><strong> Ray Ban 0RB4378</strong></p>
+        <p class="precioRay"><strong>$700.000</strong></p>
+    </div>
+
+    <div class="linea-izquierda"></div>
+
+    <div class="volver-izquierdo">
+      <a class="backbutton" [routerLink]="'/catalogo'"><button class="boton-izquierdo">Volver al catálogo</button></a>
+
+      </div>
+
+    </div>
+
+    <div class="container-derecho">
+        <div class="metodos-pago">
+            <p>Métodos de pago</p>
+
+            <div class="opcionespago">
+              <div class="tarjetas">
+                <input type="checkbox"> Tarjeta<br>
+                <img src="../html/imagenes/tarjetas logos.jpg" alt="card brands">
+              </div>
+
+              <div class="paypal">
+                <input type="checkbox"> Paypal<br>
+                <img src="../html/imagenes/paypal.jfif" alt="">
+              </div>
+
+              <div class="pse">
+              <input type="checkbox"> PSE<br>
+              <img src="../html/imagenes/pse.jfif" alt="pse">
+              </div>
+            </div>
+
+        </div>
+
+        <div class="separador1"></div>
+
+        <div class="primer-form">
+          <p class="envioinfo"><strong>Datos de envío</strong></p>
+          <input type="form" placeholder="Nombre y apellidos"><br>
+          <input type="form" placeholder="Número de contacto"><br>
+          <input type="form" placeholder="Dirección de envío"><br>
+        </div>
+
+        <div class="separador2"></div>
+
+        <div class="segundo-form">
+          <p class="cardinfo"><strong>Información del método de pago</strong></p>
+          <input type="form" placeholder="Nombre del titular de la tarjeta"><br>
+          <input type="form" placeholder="Número de la tarjeta"><br>
+          <input type="form" placeholder="Código CVC"><br>
+        </div>
+
+
+        <div class="separador3"></div><br>
+
+        <div class="confirmacion-pago">
+          <a class="boton-derecho" [routerLink]="'/pago'"><button class="boton-derecho">Pagar</button></a>
+        </div>
+
+
+    </div>
+
+</div>

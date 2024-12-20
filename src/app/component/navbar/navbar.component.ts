@@ -26,8 +26,8 @@ export class NavbarComponent {
   }
 
   logout() {
-      sessionStorage.removeItem('token')
-      this.router.navigate(['login'])
+      sessionStorage.clear()
+      this.router.navigate(['home'])
       this.ngOnInit ()
   }
 }

@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   standalone: true,
   imports: [
     RouterLink,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
@@ -26,28 +26,39 @@ export class RegistroComponent {
         })
     }
     ngOnInit () {
-      if (sessionStorage.getItem('token'))
-          this.router.navigate(['login'])
+
     }
 
     registro () {
-      this.userService.addUser(this.formulario.value).subscribe({
+      if(this.formulario.valid){
+
+        console.log(this.formulario)
+
+           this.userService.addUser(this.formulario.value).subscribe({
+
           next:(resApi: any)=> {
           Swal.fire({
               icon:"success",
               title:"Bienvenido!",
-              text:`${resApi.email}`
+              text:`Usuario creado`
           })
           },
           error:(error:any)=> {
               console.log(error);
               Swal.fire({
                   icon:"error",
-                  title:"Usuario no registrado!",
+                  title:"Usuario registrado!",
                   text:`${error.error.error}`
               })
           }
       })
+  }else{
+    Swal.fire({
+      icon: "error",
+      title: "form invalido",
+      text: "diligencia correctamente los campos"
+    })
   }
+}
 
 }

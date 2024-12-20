@@ -22,7 +22,7 @@ export class UsersService {
   }
 
   addUser (body: any) {
-    return this.http.post(`${this.apiUrl}/adduser`, body)
+    return this.http.post(`${this.apiUrl}/addUsers`, body)
   }
 
   updateUser (id :string, body:any) {

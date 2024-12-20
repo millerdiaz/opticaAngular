@@ -27,11 +27,11 @@ export class LoginComponent {
   }
 
     ngOnInit() {
-      Swal.fire({
-        icon: "error",
-        title: "Sesión inválida",
-        text: "Por favor, inicie sesión nuevamente."
-      });
+      // Swal.fire({
+      //   icon: "error",
+      //   title: "Sesión inválida",
+      //   text: "Por favor, inicie sesión nuevamente."
+      // });
 
       this.userServices.getUsers().subscribe({
         next: (resApi: any) => {
@@ -89,3 +89,5 @@ login() {
       }
 }
 }
+
+

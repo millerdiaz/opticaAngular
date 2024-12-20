@@ -5,19 +5,19 @@
           <form [formGroup]="formulario" class="form">
             <div class="input-group mb-2">
               <label for="username">Nombre</label>
-              <input formControlName="name" type="text" name="name" id="name" placeholder="">
+              <input formControlName="nombre" type="text" name="name" id="name" placeholder="">
             </div>
             <div class="input-group mb-2">
               <label for="name">Apellido</label>
-              <input formControlName="name" type="text" name="name" id="name" placeholder="">
+              <input formControlName="apellido" type="text" name="name" id="name" placeholder="">
             </div>
             <div class="input-group mb-2">
                 <label for="email">Correo electrónico</label>
-                <input formControlName="email" type="email" name="email" id="email" placeholder="">
+                <input formControlName="correo" type="email" name="email" id="email" placeholder="">
             </div>
             <div class="input-group mb-2">
                 <label for="password">Contraseña</label>
-                <input formControlName="password" type="password" name="password" id="password" placeholder="">
+                <input formControlName="contrasena" type="password" name="password" id="password" placeholder="">
             </div>
             <button (click)="registro()" class="sign">Registrate</button>
         </form>
