@@ -43,33 +43,10 @@
 
           <h2>Programa tu examen visual</h2>
         </div>
-
-
         <div class="botonesDcT">
-          <!-- Departamento -->
-          <div>
-            <p>Departamento (*)</p>
-            <div class="btn-group">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ selectedDepartamento || '-Seleccione-' }}
-              </button>
-              <ul class="dropdown-menu">
-                <li class="dropdown-item pointer" (click)="selectDepartamento('Cundinamarca')">
-                  Cundinamarca
-                </li>
 
 
-                <li class="dropdown-item pointer" (click)="selectDepartamento('Antioquia')">
-                 Antioquia
-                </li>
 
-                <li class="dropdown-item pointer" (click)="selectDepartamento('Valle del cauca')">
-                  Valle del Cauca
-                </li>
-
-              </ul>
-            </div>
-          </div>
 
           <!-- Ciudad -->
           <div>
@@ -79,7 +56,8 @@
                 {{ selectedCiudad || '-Seleccione-' }}
               </button>
               <ul class="dropdown-menu">
-                <li class="dropdown-item pointer" (click)="selectCiudad('Bogotá')">
+
+                <li class="dropdown-item pointer"   (click)="selectCiudad('Bogotá')">
                   Bogotá
 
                 </li>
@@ -106,17 +84,30 @@
                 {{ selectedTienda || '-Seleccione-' }}
               </button>
               <ul class="dropdown-menu">
+                @if(selectedCiudad === 'Bogotá'){
+                  @for(tienda of bogota; track $index){
+                <li class="dropdown-item pointer"  (click)="selectTienda(tienda)">
+                  {{ tienda }}
 
-                <li class="dropdown-item pointer" (click)="selectTienda('Chapinero')">
-                  Chapinero
+                </li> }}
+                @if(selectedCiudad === 'Medellín'){
+                  @for(tienda of medellin; track $index){
+                    <li class="dropdown-item pointer"  (click)="selectTienda(tienda)">
+                      {{ tienda }}
 
-                </li>
-                <li class="dropdown-item pointer" (click)="selectTienda('CC Titan Plaza')">
+                    </li> }}
+
+                    @if(selectedCiudad === 'Cali'){
+                      @for(tienda of cali; track $index){
+                        <li class="dropdown-item pointer"  (click)="selectTienda(tienda)">
+                          {{ tienda }}
+
+                        </li> }}
+                <!-- <li class="dropdown-item pointer" (click)="selectTienda('CC Titan Plaza')">
                   CC Titan Plaza
 
                 </li><li class="dropdown-item pointer" (click)="selectTienda('CC el retiro')">
-                  CC el retiro
-
+                  CC el retiro -->
 
               </ul>
             </div>
@@ -154,18 +145,26 @@
                 {{ selectedEspecialista || '-Seleccione-' }}
               </button>
               <ul class="dropdown-menu">
-                <li class="dropdown-item pointer" (click)="selectEspecialista('Lalo Landa')">
-                 Lalo Landa
+                @if(selectedCiudad === 'Bogotá'){
+                  @for(especialista of bogotaEspecialista; track $index){
+                <li class="dropdown-item pointer"  (click)="selectEspecialista(especialista)">
+                  {{ especialista }}
 
-                </li>
-                <li class="dropdown-item pointer" (click)="selectEspecialista('Monica Martinez')">
-                  Monica Martinez
+                </li> }}
+                @if(selectedCiudad === 'Medellín'){
+                  @for(especialista of medellinEspecialista; track $index){
+                <li class="dropdown-item pointer"  (click)="selectEspecialista(especialista)">
+                  {{ especialista }}
 
-                </li>
-                <li class="dropdown-item pointer" (click)="selectEspecialista('Claudia Patricia Ramirez')">
-                  Claudia Patricia Ramirez
+                </li> }}
 
-                </li>
+                @if(selectedCiudad === 'Cali'){
+                  @for(especialista of caliEspecialista; track $index){
+                <li class="dropdown-item pointer"  (click)="selectEspecialista(especialista)">
+                  {{ especialista }}
+
+                </li> }}
+
               </ul>
             </div>
           </div>
@@ -181,6 +180,42 @@
             <button class="btn btn-primary pointer" (click)="agendarCita()">Agendar cita</button>
           </div>
         </div>
+
+        <!-- *** Formulario *** -->
+
+        <div>
+
+        </div>
+
+
+        <!-- *** Información cita creada *** -->
+
+       @if(citaAgendada){
+        @for (item of cita; track $index) {
+
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Cita creada</h3>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>Ciudad: {{item.ciudad}} <br>
+                  Tienda: {{item.tienda}} <br>
+                  Tipo de Cita: {{item.tipoCita}} <br>
+                  Especialista: {{item.especialista}} <br>
+                  Fecha: {{item.fecha}}</p> <br>
+                <footer class="blockquote-footer"> No olvides llegar 20 minutos antes de tu cita<cite title="Source Title"> ¡Te esperamos!</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+
+          }
+       }
+
+
+
+
 
 
 
