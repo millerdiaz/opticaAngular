@@ -20,7 +20,7 @@ export class CitasComponent {
   citasService = inject(CitasService)
   selectedCiudad: string = '';
   selectedTienda: string = '';
-  selectedTipoCita: string = '';
+  selectedTipoDeCita: string = '';
   selectedFecha: string = '';
   selectedEspecialista: String='';
   ////////***** Para seleccionar Cc dependiento de la ciudad */
@@ -80,8 +80,8 @@ ngOnInit(){
     this.selectedTienda = tienda;
   }
 
-  selectTipoCita(tipoCita: string) {
-    this.selectedTipoCita = tipoCita;
+  selectTipoDeCita(tipoCita: string) {
+    this.selectedTipoDeCita = tipoCita;
   }
 
   selectEspecialista(especialista: string){
@@ -94,7 +94,7 @@ ngOnInit(){
 
       ciudad: this.selectedCiudad,
       tienda: this.selectedTienda,
-      tipoDeCita: this.selectedTipoCita,
+      tipoDeCita: this.selectedTipoDeCita,
       especialista: this.selectedEspecialista,
       fecha: this.selectedFecha
     };
