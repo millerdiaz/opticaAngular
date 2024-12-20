@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { CitasService } from '../../../services/citas.service';
 import { CommonModule } from '@angular/common';
 
@@ -9,13 +9,14 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-citas',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [FormsModule, CommonModule, RouterLink, ReactiveFormsModule],
   templateUrl: './citas.component.html',
   styleUrls: ['./citas.component.css'],
 
 })
 export class CitasComponent {
   citaAgendada: boolean = false
+  formCitas!: FormGroup
   cita!: any
   citasService = inject(CitasService)
   selectedCiudad: string = '';
@@ -46,7 +47,15 @@ export class CitasComponent {
   // Lista dinámica de tiendas según la ciudad seleccionada
   tiendas: string[] = [];
 
-  constructor (private citas: CitasService ){}
+  constructor (private citas: CitasService,private fb : FormBuilder ){
+    this.formCitas = this.fb.group({
+      ciudad:["", [Validators.required]],
+      tienda: ["", [Validators.required]],
+      tipoDeCita:["", [Validators.required]],
+      especialista:["", [Validators.required]],
+      fecha:["",[Validators.required]]
+    })
+  }
 
 //El ngOnInit va después del constructor
 

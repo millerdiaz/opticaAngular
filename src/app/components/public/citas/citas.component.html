@@ -140,7 +140,7 @@
           <!-- Tipo de Cita -->
           <div>
             <p>Especialista(*)</p>
-            <div class="btn-group">
+            <div [formGroup]="formCitas" class="btn-group">
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{ selectedEspecialista || '-Seleccione-' }}
               </button>
