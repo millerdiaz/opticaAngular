@@ -6,13 +6,16 @@ body{
   background-color: #EAF4F4;
 }
 .tituloPromociones{
-  margin-top: 90px;
-  display: flex;
-  justify-content: center;
+
+
   color: #1D3557;
+margin-top: 150px;
+margin-left: 600px;
+align-self: center !important;
+
 
   border-bottom: solid 1px #1D3557;
-  width: 1000px;
+  width: 230px;
 }
 
 .imagenesPromocion img{

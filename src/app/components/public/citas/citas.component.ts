@@ -3,13 +3,13 @@ import { FormsModule} from '@angular/forms';
 import { CitasService } from '../../../services/citas.service';
 import { CommonModule } from '@angular/common';
 
-
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-citas',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './citas.component.html',
   styleUrls: ['./citas.component.css'],
 

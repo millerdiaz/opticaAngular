@@ -190,28 +190,49 @@
 
         <!-- *** Información cita creada *** -->
 
-       @if(citaAgendada){
+       <!-- @if(citaAgendada){
         @for (item of cita; track $index) {
 
 
-          <div class="card">
-            <div class="card-header">
+          <div class="card m-5 d-flex flex-column align-items-center text-center mx-0  my-5" style="max-width: 600px;">
+            <div class="card-header mt-2">
               <h3>Cita creada</h3>
             </div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>Ciudad: {{item.ciudad}} <br>
-                  Tienda: {{item.tienda}} <br>
-                  Tipo de Cita: {{item.tipoCita}} <br>
-                  Especialista: {{item.especialista}} <br>
-                  Fecha: {{item.fecha}}</p> <br>
+            <div class="card-body ">
+              <blockquote class="blockquote mb-0 d-flex flex-column align-items-center">
+                <p>Ciudad: {{item.ciudad}}</p>
+                  <p>Tienda: {{item.tienda}}</p>
+                    <p>Tipo de Cita: {{item.tipoCita}}</p>
+                      <p>Especialista: {{item.especialista}}</p>
+                        <p>Fecha: {{item.fecha}}</p>
                 <footer class="blockquote-footer"> No olvides llegar 20 minutos antes de tu cita<cite title="Source Title"> ¡Te esperamos!</cite></footer>
               </blockquote>
             </div>
           </div>
 
           }
-       }
+       } -->
+
+       <div *ngIf="citaAgendada">
+        <div *ngFor="let item of cita; let i = index" class="card m-5 d-flex flex-column align-items-center text-center mx-auto my-5" style="max-width: 600px;">
+          <div class="card-header mt-2">
+            <h3>Cita creada</h3>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Ciudad: {{ item.ciudad }}</p>
+              <p>Tienda: {{ item.tienda }}</p>
+              <p>Tipo de Cita: {{ item.tipoCita }}</p>
+              <p>Especialista: {{ item.especialista }}</p>
+              <p>Fecha: {{ item.fecha }}</p>
+              <footer class="blockquote-footer mt-4">
+                No olvides llegar 20 minutos antes de tu cita
+                <cite title="Source Title">¡Te esperamos!</cite>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
 
 
 
