@@ -3,6 +3,8 @@
   font-style: normal;
 }
 
+
+
 nav {
   opacity: 0.8;
   display: flex;
@@ -21,7 +23,7 @@ nav {
 }
 
 nav.scrolled {
-  opacity: 1;; /* Nuevo color cuando se hace scroll */
+  opacity: 1;;
 }
 
 
@@ -167,7 +169,7 @@ button a{
 
 
 .carritoDeCompras{
-  margin-right: 30px;
+  margin-right: 15px;
   cursor: pointer;
 }
 .carritoDeCompras i{

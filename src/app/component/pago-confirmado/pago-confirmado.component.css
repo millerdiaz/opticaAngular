@@ -1,0 +1,26 @@
+.container{
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+
+.pagoConfirmado{
+  margin-top: 80px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.pagoConfirmado i{
+  font-size: 200px;
+  color: #6B9080;
+}
+.pagoConfirmado p{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
