@@ -1,0 +1,202 @@
+nav {
+  font-family: "Overpass", sans-serif;
+  font-weight: lighter;
+  font-size:medium;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 90px;
+}
+
+li {
+  display: inline;
+  margin-right: 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+li::after {
+  content: " > ";
+}
+
+li:last-child::after {
+  content: "";
+}
+
+
+.checkout{
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.container-izquierdo {
+  height: 600px;
+  width: 500px;
+  background-color: #cce3de;
+  margin: 0px 0px 25px;
+}
+
+.container-izquierdo img {
+  height: 290px;
+  width: 420px;
+  justify-content: center;
+  margin-bottom: 25px;
+  border-radius: 2.5%;
+}
+
+.opcionespago{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+
+}
+
+.metodos-pago img{
+  height: 55px;
+  width: 75px;
+}
+.gafas1 {
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gafas1 precioRay{
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.linea-izquierda{
+  height: 1px;
+  width: 450px;
+  background-color: black;
+  margin: 15px 0px 0px 15px;
+}
+
+.volver-izquierdo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+
+}
+
+.volver-izquierdo button{
+  background-color: #A4C3B2;
+  color: #1D3557;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+}
+
+.volver-izquierdo button:hover{
+  background-color: #1D3557;
+  box-shadow: 4px 10px 10px #A4C3B2;
+  color: #fff;
+}
+
+
+
+.container-derecho {
+  height: 600px;
+  width: 500px;
+  background-color: #cce3de;
+}
+
+form text {
+  width: 30px;
+  height: 30px;
+}
+
+.metodos-pago{
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.cardinfo{
+  margin-bottom: 5px;
+}
+
+
+.envioinfo{
+  margin-bottom: 5px;
+}
+
+.primer-form{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.segundo-form{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.primer-form input{
+  width: 350px;
+  height: 35px;
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
+}
+
+.segundo-form input{
+  width: 350px;
+  height: 35px;
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
+}
+
+.separador1 {
+  height: 1px;
+  width: 450px;
+  background-color: black;
+  margin: 15px 10px 0 15px;
+}
+
+.separador2 {
+  height: 1px;
+  width: 450px;
+  background-color: black;
+  margin: 1px 10px 0 15px;
+}
+
+.separador3 {
+  height: 1px;
+  width: 450px;
+  background-color: black;
+  margin: 10px 10px 0 15px;
+}
+
+.confirmacion-pago{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+}
+.boton-derecho{
+  text-align: center;
+  background-color: #A4C3B2;
+  color: #1D3557;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+}
+
+.boton-derecho:hover{
+  background-color: #1D3557;
+  box-shadow: 4px 10px 10px #A4C3B2;
+  color: #fff;
+}
