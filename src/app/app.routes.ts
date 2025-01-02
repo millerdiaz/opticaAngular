@@ -5,6 +5,9 @@ import { ProductsComponent } from './components/public/products/products.compone
 import { CitasComponent } from './components/public/citas/citas.component';
 import { DescripcionComponent } from './component/descripción/descripcion.component';
 import { PromocionesComponent } from './components/public/promociones/promociones.component';
+import { LoginComponent } from './component/login/login.component';
+import { RegistroComponent } from './component/registro/registro.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 export const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -12,5 +15,9 @@ export const routes: Routes = [
   {path:'products',component:ProductsComponent},
   {path: 'citas', component:CitasComponent},
   {path:'descripcion',component:DescripcionComponent},
-  {path:'',pathMatch:'full', redirectTo:'home'}
+  {path: 'promociones', component:PromocionesComponent},
+  {path:'',pathMatch:'full', redirectTo:'home'},
+  {path: 'login', component: LoginComponent },
+  {path: 'registro', component: RegistroComponent},
+  {path: 'checkout', component:CheckoutComponent}
 ];
