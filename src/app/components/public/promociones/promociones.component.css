@@ -1,0 +1,144 @@
+
+
+/* Hasta Aquí va la Nav*/
+
+body{
+  background-color: #EAF4F4;
+}
+.tituloPromociones{
+
+
+  color: #1D3557;
+margin-top: 150px;
+margin-left: 600px;
+align-self: center !important;
+
+
+  border-bottom: solid 1px #1D3557;
+  width: 230px;
+}
+
+.imagenesPromocion img{
+  border-radius: 7px;
+  width: 380px;
+}
+.imagenesPromocion {
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  gap: 100px;
+  padding-top: 100px;
+  margin: 20px
+
+}
+.descuento{
+  background-color:#1D3557;
+  color: white;
+  display: flex;
+  position: absolute;
+  z-index: 20;
+  border: none;
+  font-family: overpass;
+  padding: 12px;
+  border-radius: 10px;
+ font-weight: 100px;
+  margin-left: 286px;
+
+}
+
+.imagenesPromocion img:hover{
+  cursor: pointer;
+  box-shadow: 4px 10px 10px #6B9080;
+
+}
+.textoPromocion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: overpass;
+  margin-top: 30px;
+
+}
+
+.carousel{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.carousel img{
+      border-radius: 7px;
+
+
+      /* width: 399px;
+      height: 602px; */
+}
+
+.DosPorUno img {
+  border-radius: 10px;
+  height: 602px;
+}
+.carousel-track{
+
+  margin-top: 20px;
+  width: 380px;
+  height: 600px;
+  border-radius:10px ;
+  margin-right: 20px;
+}
+.carousel-track:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  transform: scale(1);
+}
+
+
+.DosPorUno{
+  width:600px;
+  border-radius: 10px;
+}
+.promocionDerecha{
+  padding-top: 10px;
+}
+
+.primeraDerecha{
+ border-radius: 5px;
+ margin-top: 8px;
+
+}
+.primeraDerecha:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  transform: scale(1);
+
+}
+.primeraDerecha img{
+  width: 680px;
+
+  border-radius: 6px;
+
+
+}
+.segundaDerecha img{
+  width: 1095px;
+  border-radius: 6px;
+  justify-self: center;
+
+
+
+}
+.segundaDerecha{
+
+  margin-top: 10px;
+
+  border-radius: 5px;
+}
+.segundaDerecha:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 1, 0.2);
+  transform: scale(1);
+
+}
+
+
+
