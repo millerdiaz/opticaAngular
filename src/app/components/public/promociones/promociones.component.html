@@ -16,7 +16,7 @@
 
 
   <div class="imagenesPromocion">
-    <div class="promocionUno">
+    <div class="promocionUno" (click)="verPromocion('uno');$event.stopPropagation()"  >
       <p class="descuento">50% Dcto</p>
       <a routerLink="/descripcionproducto">
         <img src="promocionUno.jpg" alt="Promoción Uno" />

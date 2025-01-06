@@ -1,6 +1,8 @@
 
 
-      <main class="main">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet"><main class="main">
           <div class="ojos">
             <img class="imgojos" src="ojosexamen.PNG" alt="">
           </div>
@@ -32,28 +34,51 @@
 
         </div>
 
+        <div>
+          <button class="reprogramarCita">REPROGRAMAR TU CITA</button>
+
+
         <div class="contenido">
-          <p>Sabemos que el cuidado visual es uno de los aspectos más importantes de la salud para la mayoría de personas. Ciertas condiciones visuales, pueden presentarse en cualquier momento y aumentar al pasar de los años si no son tratadas a tiempo.
-              Entendemos las necesidades de nuestros clientes y ponemos a disposición de cada persona iniciativas y el fuerte compromiso con la prevención y cuidado de la visión.</p>
+          Sabemos que el cuidado visual es uno de los aspectos más importantes de la salud para la mayoría de personas. Ciertas condiciones visuales, pueden presentarse en cualquier momento y aumentar al pasar de los años si no son tratadas a tiempo.
+              Entendemos las necesidades de nuestros clientes y ponemos a disposición de cada persona iniciativas y el fuerte compromiso con la prevención y cuidado de la visión.
         </div>
         <div class="agendamienoo">
 
-        <div class="boton">
-          <button class="reprogramarCita">REPROGRAMAR TU CITA</button>
 
           <h2>Programa tu examen visual</h2>
-        </div>
+
+
+        <div> <label for="name"></label> <input type="text" id="name" ng-model="selectedNombre" placeholder="Nombre completo" name="name" ngModel required >
+          {{selectedNombre}}
+
+        </div> <br>
+
+          <div>
+            <input for="nombreCompleto" class="label" placeholder="Nombre completo" >
+            <input  class="label" placeholder="Cédula" >
+            <input class="label" placeholder="Telefono" >
+            <input  class="label" placeholder="email" >
+          </div>
+
+
+          <!-- <form [formGroup]="formLogin" class="form">
+            <span class="title">Inicio de sesion</span>
+            <label for="email" class="label">Correo</label>
+            <input formControlName="correo" type="email" id="email" name="email" required="" class="input">
+            <label for="password" class="label">Contraseña</label>
+            <input formControlName="contrasena"  type="password" id="password" name="password" required="" class="input">
+            <button type="submit" class="submit"  (click)="login()">Iniciar sesión</button>
+          </form> -->
+
+
         <div class="botonesDcT">
-
-
-
 
           <!-- Ciudad -->
           <div>
             <p>Ciudad (*)</p>
             <div class="btn-group">
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ selectedCiudad || '-Seleccione-' }}
+                {{ selectedCiudad  ||'-Seleccione-' }}
               </button>
               <ul class="dropdown-menu">
 
@@ -188,6 +213,7 @@
         </div>
 
 
+
         <!-- *** Información cita creada *** -->
 
        <!-- @if(citaAgendada){
@@ -213,7 +239,7 @@
           }
        } -->
 
-       <div *ngIf="citaAgendada">
+       <!-- <div *ngIf="citaAgendada">
         <div *ngFor="let item of cita; let i = index" class="card m-5 d-flex flex-column align-items-center text-center mx-auto my-5" style="max-width: 600px;">
           <div class="card-header mt-2">
             <h3>Cita creada</h3>
@@ -233,7 +259,7 @@
           </div>
         </div>
       </div>
-
+ -->
 
 
 

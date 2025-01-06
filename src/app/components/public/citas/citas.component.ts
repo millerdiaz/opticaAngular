@@ -4,7 +4,12 @@ import { CitasService } from '../../../services/citas.service';
 import { CommonModule } from '@angular/common';
 
 import { RouterLink } from '@angular/router';
-
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogTitle,
+  MatDialogContent,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-citas',
@@ -15,6 +20,7 @@ import { RouterLink } from '@angular/router';
 
 })
 export class CitasComponent {
+  dialog = inject(MatDialog); // Angular Material
   citaAgendada: boolean = false
   formCitas!: FormGroup
   cita!: any
@@ -24,6 +30,13 @@ export class CitasComponent {
   selectedTipoDeCita: string = '';
   selectedFecha: string = '';
   selectedEspecialista: String='';
+  //datos usuario
+  selectedNombre: string = '';
+  selectedCedula: string = '';
+  selectedCorreo: string = '';
+  selectedCelular: string = '';
+  selectedEdad: string = '';
+
   ////////***** Para seleccionar Cc dependiento de la ciudad */
   bogota: any = ['Chapinero', 'CC Titan Plaza', 'CC el retiro', 'CC Gran Estación'];
   medellin: any =  ['CC Oviedo', 'CC El Tesoro', 'CC Viva Envigado']; // CC El Tesoro
@@ -49,6 +62,7 @@ export class CitasComponent {
 
   constructor (private citas: CitasService,private fb : FormBuilder ){
     this.formCitas = this.fb.group({
+      nombre:["",[Validators.required]],
       ciudad:["", [Validators.required]],
       tienda: ["", [Validators.required]],
       tipoDeCita:["", [Validators.required]],
@@ -80,6 +94,8 @@ ngOnInit(){
     console.log(ciudad);
 
     this.selectedCiudad = ciudad;
+    console.log("función selectCiudad",this.selectedCiudad);
+
     // this.selectedCiudad = ciudad;
     // this.tiendas = this.ciudadesYTiendas[ciudad] || []; // Actualiza las tiendas dinámicamente
     this.selectedTienda = ''; // Resetea la tienda seleccionada
@@ -95,27 +111,62 @@ ngOnInit(){
 
   selectEspecialista(especialista: string){
     this.selectedEspecialista = especialista;
+    console.log('especialista', especialista);
+  }
+
+  selectNombre(nombre: string){
+      this.selectedNombre = 'Ana';
+      console.log('nombre de usuario', nombre);
+
   }
 
   // Método para recolectar toda la información y mostrarla en consola
   agendarCita() {
     const datosCita = {
 
+      nombre: this.selectedNombre,
       ciudad: this.selectedCiudad,
       tienda: this.selectedTienda,
       tipoDeCita: this.selectedTipoDeCita,
       especialista: this.selectedEspecialista,
       fecha: this.selectedFecha
     };
-     this.addCita(datosCita);
-     this.citaAgendada = true
-
     console.log("Cita Agendada:", datosCita);
+
+     this.addCita(datosCita);
+     this.citaAgendada = true;
+
+     //Angular material
+
+     this.dialog.open(DialogDataExampleDialog, {
+      data: datosCita,
+    });
+
+
 
     // Aquí puedes enviar los datos a un servicio o backend
 
   }
 
+  usuarioCita(){
+    const datosUsuario = {
+      nombre: this.selectedNombre,
+      cedula: this.selectedCedula,
+      correo: this.selectedCorreo,
+      celular: this.selectedCelular,
+      edad: this.selectedEdad
+
+    };
+    console.log("Usuario", datosUsuario);
+
+   this.addCita(datosUsuario);
+   this.citaAgendada = true
+
+   this.dialog.open(DialogDataExampleDialog, {
+    data: datosUsuario,
+  });
+
+  }
 
     // metodo para agregar cita
 
@@ -125,4 +176,20 @@ ngOnInit(){
     }
 }
 
+
+@Component({
+  selector: 'dialog-data-example-dialog',
+  templateUrl: 'dialog-data-info-cita.html',
+  standalone: true,
+  imports: [MatDialogTitle, MatDialogContent],
+})
+export class DialogDataExampleDialog {
+  data = inject(MAT_DIALOG_DATA);
+  dataUsuario = inject(MAT_DIALOG_DATA);
+
+}
+
+function usuarioCita() {
+  throw new Error('Function not implemented.');
+}
 

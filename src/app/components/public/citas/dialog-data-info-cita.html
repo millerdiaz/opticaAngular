@@ -1,0 +1,43 @@
+
+<div class=" m-5 d-flex flex-column align-items-center text-center">
+
+  <h2 mat-dialog-title>Cita Agendada</h2>
+  <mat-dialog-content>
+    <!-- Información cita: -->
+
+    @if (data) {
+
+      <p>Nombre: {{ data.nombre }}</p>
+      <p>Ciudad: {{ data.ciudad }}</p>
+      <p>Tienda: {{ data.tienda }}</p>
+      <p>Tipo de Cita: {{ data.tipoDeCita }}</p>
+      <p>Especialista: {{ data.especialista }}</p>
+      <p>Fecha: {{ data.fecha }}</p>
+
+      <footer class="blockquote-footer mt-4">
+        No olvides llegar 20 minutos antes de tu cita
+        <cite title="Source Title">¡Te esperamos!</cite>
+      </footer>
+
+    }
+
+  </mat-dialog-content>
+
+</div>
+
+
+
+
+<!-- ------------------Formulario datos Usuario--------------- -->
+
+<!-- <div class="register">
+
+  <form [formGroup]="formLogin" class="form">
+      <span class="title">Inicio de sesion</span>
+      <label for="email" class="label">Correo</label>
+      <input formControlName="correo" type="email" id="email" name="email" required="" class="input">
+      <label for="password" class="label">Contraseña</label>
+      <input formControlName="contrasena"  type="password" id="password" name="password" required="" class="input">
+      <button type="submit" class="submit"  (click)="login()">Iniciar sesión</button>
+    </form>
+</div> -->
