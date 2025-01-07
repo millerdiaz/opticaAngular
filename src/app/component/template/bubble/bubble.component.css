@@ -1,0 +1,112 @@
+.floating-bubble i{
+  font-size: 35px;
+  border-radius: 50%;
+  color: white;
+}
+
+.floating-bubble{
+
+ border: none;
+ padding: 0;
+ border-radius: 50%;
+ width: 60px;
+ height: 60px;
+ background-color: #6B9080;
+ box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.1);
+ cursor: pointer;
+ position: relative;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.contact {
+ display:none;
+ position: absolute;
+ left: 0;
+ padding: 2px;
+ border-radius: 50%;
+ z-index: 100;
+ border: none;
+ bottom: 100%;
+ margin-bottom: 3px;
+}
+.contact a{
+ border-radius: 50%;
+}
+
+.floating-bubble:hover .contact {
+ display: block;
+ border: none;
+
+
+}
+.floating-bubble:hover{
+ box-shadow: 1px 1px 4px #1D3557;
+
+}
+.contact:hover{
+ display: flex;
+ justify-content: space-around;
+ flex-direction: row;
+
+
+}
+.contact button{
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ border: none;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 20px;
+}
+.whatsapp i{
+ border: none;
+ color:#6B9080 ;
+
+
+}
+.whatsapp i:hover{
+ color: white;
+
+}
+.contact button:hover{
+ display: flex;
+ background-color:#6B9080 ;
+
+}
+.facebook i{
+ border: none;
+ color:#6B9080 ;
+ padding-left: 2px;
+
+}
+.facebook i:hover{
+color: white;
+}
+.instagram i{
+border: none;
+color:#6B9080 ;
+padding-left: 2px;
+
+
+}
+.instagram i:hover{
+color: white;
+}
+.contenedorBubble{
+ position: fixed;
+ left: 1240px;
+ bottom: 100px;
+ z-index: 1000;
+ margin-bottom: 10px;
+}
+
+.floating-bubble{
+ position:fixed;
+ z-index: 1000;
+}

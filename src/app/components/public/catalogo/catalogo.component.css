@@ -30,3 +30,66 @@ li::after {
 li:last-child::after {
   content: "";
 }
+
+/* .container-filtro {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 50px;
+  height: 120px;
+  background-color: #fff;
+  padding: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: left 0.9s ease;
+}
+
+.filtrotitulo {
+  text-align: left;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: left;
+}
+
+.filtro label {
+  margin-bottom: 5px;
+  font-weight: lighter;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.filtro select {
+  padding: 8px;
+  font-size: 16px;
+  width: 120px;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+label {
+  margin-bottom: 5px;
+  text-align: start;
+}
+
+body:hover .container-filtro {
+  left: 0;
+}
+
+.container-filtro:hover {
+  left: 0;
+}
+
+.container-filtro {
+  height: 460px;
+  width: 50px;
+  background-color: #cce3de;
+  margin: 0px 0px 0px;
+}
+
+.container-filtro{
+  width: 50px;
+} */

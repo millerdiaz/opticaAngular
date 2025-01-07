@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+
 import { HomeComponent } from '../home/home.component';
 import { Router, RouterLink } from '@angular/router';
+// import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [
+    RouterLink,
+
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
   constructor(private router : Router) {}
   estado!: boolean
 
@@ -29,5 +34,12 @@ export class NavbarComponent {
       sessionStorage.clear()
       this.router.navigate(['home'])
       this.ngOnInit ()
+  }
+
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 600;
   }
 }

@@ -1,0 +1,43 @@
+<div class="body">
+  @for (item of product; track $index) {
+    <div class="producto">
+      <!-- Imagen del producto y logos -->
+      <div class="imagenProducto">
+        <img src="{{item.img}}" alt="logo empresa">
+
+        <!-- Logos debajo de la imagen -->
+        <div class="logos">
+          <div>
+            <i class="bi bi-tools"></i>
+            <p>Limpieza y ajuste gratis en todas nuestras tiendas.</p>
+          </div>
+          <div>
+            <i class="bi bi-shield-fill-plus"></i>
+            <p>Garantía oftálmica y garantía estética</p>
+          </div>
+          <div>
+            <i class="bi bi-truck"></i>
+            <p>Envio Gratis</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Características a la derecha -->
+      <div class="caracteristicas">
+        <h2>Características</h2>
+        <p>Marca: {{item.marca}}</p>
+        <h5 class="card-title">Modelo: {{item.modelo}}</h5>
+        <p class="card-text">Descripción: {{item.descripcion}}</p>
+        <p class="card-text">Precio: {{item.precio}}</p>
+
+        <div class="descripcion">
+          <img src="rayBan.png" alt="logo empresa" width="100px">
+
+          <p>Nacido en 1937 por necesidad, Ray-Ban ha estado a la vanguardia en el desarrollo de anteojos de sol de alta calidad para proteger a los pilotos de los fuertes rayos del sol. Desde entonces, Ray-Ban ha sido la marca elegida por los visionarios y creadores culturales de todo el mundo para expresar su propia identidad de una manera más auténtica y atrevida</p>
+          <button>Añadir al carrito</button>
+        </div>
+      </div>
+
+    </div>
+  }
+</div>
