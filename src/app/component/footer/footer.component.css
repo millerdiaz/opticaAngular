@@ -1,34 +1,44 @@
-.terminosYcondiciones{
-  width: 331px;
-  height: 180px;
+footer {
   display: flex;
-  flex-direction: column;
-
-}
-footer{
-  width: 1348px;
-
-  margin-top: 10px;
+  justify-content: space-between;
   padding-top: 20px;
   padding-left: 30px;
   padding-bottom: 20px;
-  margin-top: 50px;
-  display: flex;
-  background-color:#CCE3DE;
+  background-color: #CCE3DE;
+  flex-wrap: wrap;
 }
-footer a{
+
+footer div {
+  width: 31%;
+  min-width: 270px;
+  margin-right: 2%;
+}
+
+footer a {
   text-decoration: none;
-  color:#1D3557;
+  color: #1D3557;
+  margin-bottom: 8px;
 }
-.contactanos{
-  width: 331px;
-  height: 180px;
-  display: flex;
-  flex-direction: column;
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    padding-left: 10px;
+  }
+
+  footer div {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
-.linkInteres{
-  width: 331px;
-  height: 180px;
-  display: flex;
-  flex-direction: column;
+
+@media (max-width: 480px) {
+  footer {
+    padding-left: 5px;
+  }
+
+  footer div {
+    width: 100%;
+  }
 }

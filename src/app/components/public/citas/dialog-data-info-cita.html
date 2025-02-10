@@ -1,13 +1,16 @@
 
 <div class=" m-5 d-flex flex-column align-items-center text-center">
 
-  <h2 mat-dialog-title>Cita Agendada</h2>
+  <!-- <h2 mat-dialog-title>Cita Agendada</h2> -->
   <mat-dialog-content>
     <!-- Información cita: -->
 
     @if (data) {
 
-      <p>Nombre: {{ data.nombre }}</p>
+      <h2 mat-dialog-title> ¡Gracias {{ data.nombreCompleto }} por agendar tu cita con nosotros!</h2>
+      <!-- <p>Email {{ data.email }}</p> -->
+
+<cite title="Source Title" > Aquí están los datos de tu cita:</cite> <br>
       <p>Ciudad: {{ data.ciudad }}</p>
       <p>Tienda: {{ data.tienda }}</p>
       <p>Tipo de Cita: {{ data.tipoDeCita }}</p>
@@ -24,20 +27,3 @@
   </mat-dialog-content>
 
 </div>
-
-
-
-
-<!-- ------------------Formulario datos Usuario--------------- -->
-
-<!-- <div class="register">
-
-  <form [formGroup]="formLogin" class="form">
-      <span class="title">Inicio de sesion</span>
-      <label for="email" class="label">Correo</label>
-      <input formControlName="correo" type="email" id="email" name="email" required="" class="input">
-      <label for="password" class="label">Contraseña</label>
-      <input formControlName="contrasena"  type="password" id="password" name="password" required="" class="input">
-      <button type="submit" class="submit"  (click)="login()">Iniciar sesión</button>
-    </form>
-</div> -->

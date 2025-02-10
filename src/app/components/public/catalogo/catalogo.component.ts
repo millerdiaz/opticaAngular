@@ -1,17 +1,38 @@
 import { Component, inject } from '@angular/core';
 import { CatalogoService } from '../../../services/catalogo/catalogo.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ProductService } from '../../../services/product/product.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    RouterLink
+  ],
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })
+
+
+
 export class CatalogoComponent {
 
+  ProductService= inject(ProductService)
+  products! : any
+  ngOnInit(){
+    this.ProductService.getProducts().subscribe({
+      next: (resApi: any)=>{
+        this.products= resApi
+      },
+      error: (error: any)=>{
+        console.log(error);
+
+      }
+    })
+  }
   catalogo!: any
   catalogoService = inject(CatalogoService)
   formCatalogo!: FormGroup

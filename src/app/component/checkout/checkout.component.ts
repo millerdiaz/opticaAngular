@@ -11,5 +11,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './checkout.component.css'
 })
 export class CheckoutComponent {
-
+  producto = {
+    nombre: 'Ray Ban 0RB4378',
+    precio: '$ 700.000',
+    imagen: 'path/to/image.jpg'
+  }
 }

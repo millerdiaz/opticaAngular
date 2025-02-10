@@ -1,129 +1,150 @@
-
-
-/* Hasta Aquí va la Nav*/
+/* Estilos generales */
 *{  font-family: "Overpass", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-
 .playfair {
   font-family: "Playfair", serif;
   font-optical-sizing: auto;
   font-style: normal;
-
 }
-h2{
 
+/* img ojos */
+
+.ojos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.imgojos {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px; /* Opcional: esquinas redondeadas */
+}
+
+/* Ocultar la imagen en dispositivos móviles */
+@media (max-width: 768px) {
+  .ojos {
+      display: none;
+  }
+}
+
+
+/* img ojos fin*/
+
+h2{
   margin-left: 30px;
   margin-top: 40px;
-
-  justify-content: center;
 }
 
-
-.contenido{
-  padding: 30px;
-  margin: 0 100px;
-  border-color: none;
-  background-color: #b3cdc1;
-  opacity: 50px;
-  border-radius: 35px 0px 35px 0px;
-  -moz-border-radius: 35px 0px 35px 0px;
-  -webkit-border-radius: 35px 0px 35px 0px;
-  border: none;
-
-  /* flex-wrap:wrap-reverse ; */
-}
-.main{
-  margin-top: 7rem;
-  display: flex;
-  background-color: #EAF4F4;
-  flex-wrap: wrap;
-
-}
-.main{
-  margin-left: 30px;
-}
-
-.imgojos{
-  width: 1200px;
-  height: 139px;
-}
 .pasosAgendamento{
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
-  padding: 30px;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 30px;
-
-
 }
-.tiendaRelogAgenda{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 400px;
-  height: 130px;
+.pasos{
+  margin: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .numeros{
-  font-size: 120px;
-  font-family: overpass ;
-  color: #1D3557;
-
+  font-size: 100px;
   font-family: "Playfair", serif;
-
+  color: #1D3557;
 }
 
 .textoPasos{
   margin-left: 20px;
-  margin-top: 25px;
+  margin-top: 5px;
+  text-align: center;
 }
-.agendamientoo{
-  display: flex;
-  flex-direction: column;
+
+/*contenido chat */
+.contenido {
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 90%;
+  background: rgba(179, 205, 193, 0.8);
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
+
+.contenido:hover {
+  transform: scale(1.03);
+}
+
+.contenido h2 {
+  color: #2a5d4d;
+  opacity: 50px;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.contenido p {
+  color: #2e2e2e;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .contenido {
+      padding: 20px;
+      max-width: 95%;
+  }
+
+  .contenido h2 {
+      font-size: 1.5rem;
+  }
+
+  .contenido p {
+      font-size: 0.9rem;
+  }
+}
+
+/*contenido chat fin*/
+
+
 .reprogramarCita{
-  /* margin-left: 30px; */
-  display: flex;
-  justify-content: center;
-margin-left: 30px;
+  display: block;
+  margin: 0 auto;
   background-color: #1D3557;
   padding: 20px;
   border: none;
-  border-radius: 6px ;
-
+  border-radius: 6px;
   margin-bottom: 50px;
   color: white;
-  box-shadow:  5px 5px 22px #6e6e6e,
-  -5px -5px 22px #ffffff;
+  box-shadow: 5px 5px 22px #6e6e6e, -5px -5px 22px #ffffff;
+  text-align: center;
 }
-/* .reprogramarCita:hover
-{
-background-color:#6B9080;
-
-box-shadow:  5px 5px 22px #6e6e6e,
-  -5px -5px 22px #ffffff;
-} */
 
 .botonesDcT {
+  margin: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
-  margin-left: 30px;
 }
 
 .dropdown-wrapper {
   flex: 1;
   min-width: 200px;
 }
+
 .btn-group {
   flex: 1;
   display: flex;
@@ -131,166 +152,158 @@ box-shadow:  5px 5px 22px #6e6e6e,
   align-items: center;
   min-width: 200px;
 }
+
 .agendarCita {
   display: flex;
   align-items: end;
-
 }
+
 .agendarCita button{
   width: 150px;
   height: 36px;
   background-color: #6B9080;
   color: white;
   border-radius: 5px;
-}
-
-input{
   border: none;
-  outline: none;
 }
 
-.inputUsuario{
-  padding: 20px;
-  margin-left: 30px;
+.form-completo{
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-input:focus {
-  border: 2px solid #6B9080;
+h3 {
+  font-size: 24px;
+  color: #1D3557;
+  margin-bottom: 20px;
 }
 
-
-.calendario{
+.user-input-box {
+  display: flex;
   flex-direction: column;
-
+  margin-bottom: 15px;
+  text-align: left;
 }
-.calendario input{
+
+label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.inputUsuario {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #6B9080;
+  border-radius: 6px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.inputUsuario:focus {
+  border-color: #1D3557;
+  box-shadow: 0px 0px 5px rgba(29, 53, 87, 0.5);
+}
+
+@media (max-width: 480px) {
+  .form-completo {
+    padding: 15px;
+  }
+  .inputUsuario {
+    font-size: 14px;
+    padding: 10px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .numeros{
+    font-size: 80px;
+  }
+}
+
+/* Estilos para form-cita */
+.form-cita {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+  text-align: center;
+}
+
+.botonesDcT {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+p {
+  font-size: 18px;
+  color: #1D3557;
+  font-weight: bold;
+}
+
+.btn-group {
+  width: auto;
+}
+
+.btn-group button {
+  padding: 12px;
   background-color: #6B9080;
   color: white;
-}
-input{
-  padding: 10px;
+  border: none;
+  border-radius: 6px;
   font-size: 16px;
-  border: 0px solid color(#6B9080); /* Borde del campo */
-  border-radius: 5px; /* Bordes redondeados */
-   /* Color del texto */
-  width: 150px;
-  height: 36px;
 }
-.btn-group button{
-  border: #6B9080;
+
+.dropdown-menu {
+  width: auto;
+}
+
+.calendario input {
+  width: 100%;
+  padding: 12px;
   background-color: #6B9080;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-@media (max-width:1215px) {
-  .imgojos{
-      max-width: 700px;
-      margin: 0px;}
-
-
-  h2{
-
-      font-size: 20px;
-
-  }
-
-
-  .pasosAgendamento{
-      flex-wrap: wrap;
-  }
-
-
-
-.pointer{
-
-  cursor: pointer;
-
-}
-@media (max-width:750px) {
-  .pasosAgendamento{
-
-      flex-direction: column;
-  }
-  .botonesDcT{
-      flex-direction: column;
-
-  }
-
-
-}
-@media (max-width:400px) {
-  /* .contenido{
-      max-width: 380px;
-  } */
-  .botonesDcT{
-      width: 100%;
-  }
-}
-
-
-.cantidad{
-  width: 95px;
-  height: 27px;
-}
-.añadirAlCarro{
-  background-color: rgb(221, 69, 69);
-  border: none ;
-}
-.descripcion{
-  margin-top: 50px;
-  width: 950px;
-  height: 149px;
+.agendarCita {
   display: flex;
   justify-content: center;
-  gap: 10px;
- border: 1px solid black;
- align-items: center;
- border-radius: 10px;
- margin-left: 157px;
- padding: 10px;
-}
-p{
-  font-size: 16px;
+  margin-top: 20px;
 }
 
-
-.imgEscudoLogo{
-  margin-top: 40px;
-  margin-bottom: 30px;
+.agendarCita button {
   width: 200px;
-  height: 130px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.imgEscudoLogo img{
-  width: 40px;
-}
-.botones{
-  margin-left: 31px;
-
-}
-.cantidad{
-  letter-spacing: 8px;
-  color: black;
-}
-.añadirAlCarro{
+  height: 45px;
+  background-color: #6B9080;
   color: white;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-/* Tarjeta de confirmación cita */
-
-
-
-
-footer{
-  padding-top: 20px;
-  padding-left: 30px;
-  padding-bottom: 20px;
-  margin-top: 50px;
-  display: flex;
-  background-color:#CCE3DE;
+@media (max-width: 768px) {
+  .botonesDcT {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-
-
+@media (max-width: 480px) {
+  .form-cita {
+    padding: 15px;
+  }
+  .btn-group button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

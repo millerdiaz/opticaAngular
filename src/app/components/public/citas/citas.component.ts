@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} f
 import { CitasService } from '../../../services/citas.service';
 import { CommonModule } from '@angular/common';
 
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {
   MatDialog,
   MAT_DIALOG_DATA,
@@ -20,6 +20,13 @@ import {
 
 })
 export class CitasComponent {
+
+  //formulario
+  formUsuarios!: FormGroup
+  // constructor(private fb: FormBuilder, private router: Router) {
+
+  // }
+  //
   dialog = inject(MatDialog); // Angular Material
   citaAgendada: boolean = false
   formCitas!: FormGroup
@@ -48,28 +55,32 @@ export class CitasComponent {
   caliEspecialista: any = ['María Fernández', 'José Torres', 'Lucía Castro'];
 
 
-  // Ciudades y sus respectivas tiendas
-  // ciudadesYTiendas: any = {
-  //   Bogotá: ['Chapinero', 'CC Titan Plaza', 'CC el retiro', 'CC Gran Estación'],
-  //   Medellín: ['CC Oviedo', 'CC El Tesoro', 'CC Viva Envigado'],
-  //   Cali: ['Palmetto Plaza', 'Unicentro', 'CC Jardín Plaza']
-  // };
+
 
 
   // ciudades: string[] = Object.keys(this.ciudadesYTiendas);
+
+
   // Lista dinámica de tiendas según la ciudad seleccionada
   tiendas: string[] = [];
 
   constructor (private citas: CitasService,private fb : FormBuilder ){
     this.formCitas = this.fb.group({
-      nombre:["",[Validators.required]],
+
       ciudad:["", [Validators.required]],
       tienda: ["", [Validators.required]],
       tipoDeCita:["", [Validators.required]],
       especialista:["", [Validators.required]],
-      fecha:["",[Validators.required]]
+      fecha:["",[Validators.required]],
+      nombreCompleto: ["",[Validators.required]],
+      cedula:["", [Validators.required]],
+      telefono:["", [Validators.required, Validators.minLength(10)]],
+      email:["", [Validators.required, Validators.email]]
     })
+
   }
+
+
 
 //El ngOnInit va después del constructor
 
@@ -96,8 +107,7 @@ ngOnInit(){
     this.selectedCiudad = ciudad;
     console.log("función selectCiudad",this.selectedCiudad);
 
-    // this.selectedCiudad = ciudad;
-    // this.tiendas = this.ciudadesYTiendas[ciudad] || []; // Actualiza las tiendas dinámicamente
+
     this.selectedTienda = ''; // Resetea la tienda seleccionada
   }
 
@@ -120,33 +130,35 @@ ngOnInit(){
 
   }
 
-  // Método para recolectar toda la información y mostrarla en consola
-  agendarCita() {
-    const datosCita = {
+agendarCita() {
+  // Obtener datos del formulario
+  const datosCita = this.formCitas.value;
 
-      nombre: this.selectedNombre,
-      ciudad: this.selectedCiudad,
-      tienda: this.selectedTienda,
-      tipoDeCita: this.selectedTipoDeCita,
-      especialista: this.selectedEspecialista,
-      fecha: this.selectedFecha
-    };
-    console.log("Cita Agendada:", datosCita);
+  // Agregar los valores seleccionados desde los botones
+  const citaCompleta = {
+    ...datosCita,  // Datos del formulario
+    ciudad: this.selectedCiudad,
+    tienda: this.selectedTienda,
+    tipoDeCita: this.selectedTipoDeCita,
+    especialista: this.selectedEspecialista,
+    fecha: this.selectedFecha
+  };
 
-     this.addCita(datosCita);
-     this.citaAgendada = true;
+  console.log("Cita Agendada:", citaCompleta);
 
-     //Angular material
+  // Enviar la cita al backend
+  this.addCita(citaCompleta);
 
-     this.dialog.open(DialogDataExampleDialog, {
-      data: datosCita,
-    });
+  // Marcar la cita como agendada
+  this.citaAgendada = true;
 
-
+  // Abrir el diálogo con los datos
+  this.dialog.open(DialogDataExampleDialog, {
+    data: citaCompleta,
+  });
+}
 
     // Aquí puedes enviar los datos a un servicio o backend
-
-  }
 
   usuarioCita(){
     const datosUsuario = {
@@ -159,10 +171,10 @@ ngOnInit(){
     };
     console.log("Usuario", datosUsuario);
 
-   this.addCita(datosUsuario);
-   this.citaAgendada = true
+  this.addCita(datosUsuario);
+  this.citaAgendada = true
 
-   this.dialog.open(DialogDataExampleDialog, {
+  this.dialog.open(DialogDataExampleDialog, {
     data: datosUsuario,
   });
 

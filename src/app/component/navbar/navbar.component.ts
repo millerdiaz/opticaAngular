@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { HomeComponent } from '../home/home.component';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -13,30 +14,24 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor(private router : Router) {}
-  estado!: boolean
-
-  ngOnInit () {
-      if(sessionStorage.getItem('token')){
-          this.estado = true
-      }else {
-          this.estado = false
-      }
-  }
-
-  ngDoCheck() {
-      this.ngOnInit()
-  }
-
-  logout() {
-      sessionStorage.clear()
-      this.router.navigate(['home'])
-      this.ngOnInit ()
-  }
   isScrolled = false;
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
+
     this.isScrolled = window.scrollY > 600;
   }
+
+  menuActive: boolean = false;
+
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
+
+    if (this.menuActive) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  }
+
+
 }

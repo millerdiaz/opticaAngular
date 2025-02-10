@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsersService {
-  apiUrl: string = "http://localhost:2000/api"
+prodUrl = 'http//52.91.239.7:3000/api'
   // token: any = sessionStorage.getItem('token')
 
   constructor(private http: HttpClient) { }
@@ -14,26 +14,26 @@ export class UsersService {
   getUsers () {
     const headers = new HttpHeaders()
 // .set('Authorization', `Bearer ${this.token}`)
-    return this.http.get(`${this.apiUrl}/users`, {headers})
+    return this.http.get(`${this.prodUrl}/users`, {headers})
   }
 
   eliminarUser (id: string) {
-    return this.http.delete(`${this.apiUrl}/deleteuser/${id}`)
+    return this.http.delete(`${this.prodUrl}/deleteuser/${id}`)
   }
 
   addUser (body: any) {
-    return this.http.post(`${this.apiUrl}/addUsers`, body)
+    return this.http.post(`${this.prodUrl}/addUsers`, body)
   }
 
   updateUser (id :string, body:any) {
-    return this.http.put(`${this.apiUrl}/updateuser/${id}`, body)
+    return this.http.put(`${this.prodUrl}/updateuser/${id}`, body)
   }
 
   getOneUser (id :string) {
-    return this.http.get(`${this.apiUrl}/user/${id}`)
+    return this.http.get(`${this.prodUrl}/user/${id}`)
   }
   session(body: any) {
-    return this.http.post(`${this.apiUrl}/inicioDeSesion`, body)
+    return this.http.post(`${this.prodUrl}/inicioDeSesion`, body)
   }
 
 }

@@ -27,12 +27,6 @@ export class LoginComponent {
   }
 
     ngOnInit() {
-      // Swal.fire({
-      //   icon: "error",
-      //   title: "Sesión inválida",
-      //   text: "Por favor, inicie sesión nuevamente."
-      // });
-
       this.userServices.getUsers().subscribe({
         next: (resApi: any) => {
           console.log(resApi);
@@ -48,9 +42,6 @@ export class LoginComponent {
           });
         }
       });
-
-
-
   }
 
 
@@ -66,28 +57,28 @@ login() {
               this.ngOnInit()
               this.router.navigate(['home'])
 
-              Swal.fire({
-                  icon:"success",
-                  title:"Bienvenido!",
-                  text:`${resApi}`
-              })
-          },
-          error:(error:any)=>{
-              console.log(error);
-              Swal.fire({
-                  icon:"warning",
-                  title:"Formulario incorrecto!",
-                  text:`${error.error.error}`
-              })
-          }
+              // Swal.fire({
+              //     icon:"success",
+              //     title:"Bienvenido!",
+              //     text:``
 
-      })} else {
-        Swal.fire({
-        icon:"warning",
-        title:"Formulario incorrecto!"
+          }   // }),
       })
-      }
+  }
 }
-}
+      //     error:(error:any)=>{
+      //         console.log(error);
+      //         Swal.fire({
+      //             icon:"warning",
+      //             title:"Formulario incorrecto!",
+      //             text:${error.error.error}
+      //         })
+      //     }
 
-
+      // })} else {
+      //   Swal.fire({
+      //   icon:"warning",
+      //   title:"Formulario incorrecto!"
+      // })
+      // }
+    }

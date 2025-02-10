@@ -5,10 +5,11 @@
 </style>
 
 <header>
-  <nav [class.scrolled]="isScrolled">
+  <nav [class.scrolled]="isScrolled" >
     <div class="logoPrincipal">
       <a [routerLink]="['/home']"  ><img src="logoPrincipal.png" alt="logo empresa"></a>
     </div>
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
 
     <div class="buscador">
       <input type="text" id="buscarProducto" placeholder="¿Que estas buscando ?">
@@ -16,8 +17,8 @@
 
     </div>
 
-    <div class="botonesNav">
-      <button class="catalogo"><a routerLink="catalogo">Catálogo</a>
+    <div class="botonesNav" [class.active]="menuActive">
+      <button class="catalogo"><a [routerLink]="['/catalogo']">Catálogo</a>
         <div class="opciones">
           <a href="./catalogo.html">Gafas de sol</a>
           <a href="./catalogo.html">Gafas Oftafmologicas</a>
@@ -27,54 +28,37 @@
         </div>
       </button>
 
-      <button class="citas"><a routerLink="citas">Examen visual</a>
+      <button class="examenVisual"><a [routerLink]="['/citas']">Examen visual</a>
       <div class="opcionesDos">
-        <a href="../">Nuestros Examenes</a>
+        <a href="./examenVisual.html">Nuestros Examenes</a>
         <a href="./examenVisual.html">Nuestras cirugias</a>
         <a href="./examenVisual.html">Localizanos</a>
       </div>
       </button>
 
-      <button class="promociones"><a routerLink="promociones">Promociones</a>
-       <div class="opcionesTres">
-         <a href="../html/promociones.html">Mujer</a>
-         <a href="../html/promociones.html">Hombre</a>
-         <a href="../html/promociones.html">Unisex</a>
-         <a href="../html/promociones.html">Niños</a>
-       </div>
+      <button class="promociones"><a [routerLink]="['/promociones']">Promociones</a>
+      <div class="opcionesTres">
+        <a href="../html/promociones.html">Mujer</a>
+        <a href="../html/promociones.html">Hombre</a>
+        <a href="../html/promociones.html">Unisex</a>
+        <a href="../html/promociones.html">Niños</a>
+      </div>
       </button>
 
-      <button class="inicioSesion"><a [routerLink]="['/login']">Iniciar sesion</a>
+      <button class="inicioSesion"><a [routerLink]="['/login']">Iniciar sesión</a>
         <div class="opcionCuatro">
-          <a [routerLink]="['/login']">Inicia sesión</a>
+          <a href="../html/promociones.html">Inicia sesión</a>
           <a [routerLink]="['/registro']">Registrate</a>
-          <!-- <a [routerLink]="['/home']">Cerrar sesión</a> -->
 
         </div>
-       </button>
+      </button>
 
     </div>
 
 
     <div class="carritoDeCompras">
-      <a [routerLink]="['/checkout']"><i class="bi bi-cart4"></i></a>
+      <a href="./checkout.html"><i class="bi bi-cart4"></i></a>
     </div>
-
-    <!-- @if (!estado) {
-      <li class="nav-item">
-          <a class="nav-link" [routerLink]="'inicioSesion'">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'registro'">Register</a>
-        </li>
-    }
-    @if (estado) {
-        <li class="nav-item">
-          <a class="nav-link " (click)="logout()" type="button">Logout</a>
-        </li>
-    } -->
-
-
   </nav>
 
 </header>

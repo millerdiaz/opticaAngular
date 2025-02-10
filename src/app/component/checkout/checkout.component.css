@@ -200,3 +200,69 @@ form text {
   box-shadow: 4px 10px 10px #A4C3B2;
   color: #fff;
 }
+
+@media (max-width: 1024px) {
+  /* Para pantallas medianas (tabletas), ocultamos el contenedor izquierdo */
+  .checkout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-izquierdo {
+    display: none;  /* Oculta el contenedor izquierdo en pantallas medianas */
+  }
+
+  .container-derecho {
+    flex: 1;
+    width: 80%;  /* Hace que el contenedor derecho ocupe el 80% del ancho */
+    margin: 10px 0;
+  }
+
+  .linea-izquierda {
+    display: none;  /* Oculta la línea divisoria en pantallas medianas */
+  }
+
+  .rayban {
+    max-width: 200px;  /* Reduce el tamaño de la imagen */
+  }
+
+  .boton-izquierdo, .boton-derecho {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Para pantallas más pequeñas (móviles) */
+  .checkout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-izquierdo {
+    display: none;  /* Oculta el contenedor izquierdo también en pantallas pequeñas */
+  }
+
+  .container-derecho {
+    width: 90%;  /* Hace que el contenedor derecho ocupe el 90% del ancho */
+  }
+
+  .metodos-pago,
+  .primer-form,
+  .segundo-form {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  /* Redefinir algunos márgenes */
+  .descripcionRay, .precioRay {
+    font-size: 14px;
+  }
+
+  .opcionespago div {
+    font-size: 14px;
+  }
+
+  .confirmacion-pago {
+    margin-top: 20px;
+  }
+}

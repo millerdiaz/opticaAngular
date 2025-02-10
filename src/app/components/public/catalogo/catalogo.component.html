@@ -1,47 +1,18 @@
-<nav aria-label="Breadcrumb">
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li>Catálogo</li>
-  </ul>
-</nav>
+<div class="productos-container" style="display: flex; flex-wrap: wrap; gap: 0;">
+  @for (item of products; track $index) {
 
-<div class="container-filtro">
-  <div class="losfiltros">
-      <div class="filtrotitulo"><strong>Filtro</strong></div><br>
-  <div class="primer filtro">
-      <label for="genero">Género</label><br>
-      <select id="genero" name="genero">
-          <option value="femenino">Femenino</option>
-          <option value="masculino">Masculino</option>
-          <option value="unisex">Unisex</option>
-      </select>
-  </div>
+    <div class="cuadros">
+      <div class="card">
 
-  <div class="segundo-filtro">
-      <label for="marcas">Marcas</label><br>
-      <select id="marcas" name="marcas">
-          <option value="rayban">Rayban</option>
-          <option value="dior">Dior</option>
-          <option value="prada">Prada</option>
-      </select>
-  </div>
+        <a [routerLink]="['descripcion', item.id]">
+          <img class="imagenesPromocion" width="200px" height="150px" src="{{item.img}}" alt="Imagen del producto">
+        </a>
 
-  <div class="tercer-filtro">
-      <label for="formas">Formas</label><br>
-      <select id="formas" name="formas">
-          <option value="redondas">Redondas</option>
-          <option value="cuadradas">Cuadradas</option>
-          <option value="ovaladas">Ovaladas</option>
-      </select>
-  </div>
-</div>
-
-  <div class="cuarto-filtro">
-      <label for="material">Material</label><br>
-      <select id="material" name="material">
-          <option value="plastico">Plástico</option>
-          <option value="pasta">Pasta</option>
-          <option value="metal">Metal</option>
-      </select>
-  </div>
-</div>
+        <div class="textoPromocion">
+          <p class="descripcionG">{{item.descripcion}}</p>
+          <p class="modelG">{{item.modelo}}</p>
+          <h3 class="acomo">{{item.precio}}</h3>
+        </div>
+      </div>
+    </div>
+  }

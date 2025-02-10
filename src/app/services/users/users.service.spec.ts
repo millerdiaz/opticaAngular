@@ -1,16 +1,36 @@
-import { TestBed } from '@angular/core/testing';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { UsersService } from './users.service';
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+  apiUrl: string = "http://localhost:2000/api"
 
-describe('UsersService', () => {
-  let service: UsersService;
+  constructor(private http: HttpClient) { }
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(UsersService);
-  });
+  getUsers () {
+    const headers = new HttpHeaders()
+    return this.http.get(${this.apiUrl}/users, {headers})
+  }
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  eliminarUser (id: string) {
+    return this.http.delete(${this.apiUrl}/deleteuser/${id})
+  }
+
+  addUser (body: any) {
+    return this.http.post(${this.apiUrl}/addUsers, body)
+  }
+
+  updateUser (id :string, body:any) {
+    return this.http.put(${this.apiUrl}/updateuser/${id}, body)
+  }
+
+  getOneUser (id :string) {
+    return this.http.get(${this.apiUrl}/user/${id})
+  }
+  session(body: any) {
+    return this.http.post(${this.apiUrl}/inicioDeSesion, body)
+  }
+
+}

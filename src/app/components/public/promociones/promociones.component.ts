@@ -8,6 +8,7 @@ import {
   MatDialogTitle,
   MatDialogContent,
 } from '@angular/material/dialog';
+import { ProductService } from '../../../services/product/product.service';
 
 @Component({
   selector: 'app-promociones',
@@ -18,23 +19,19 @@ import {
 })
 export class PromocionesComponent {
 
-  dialog = inject(MatDialog); // Angular Material
+productsService = inject(ProductService)
+products! : any
+ngOnInit(){
+  this.productsService.getProducts().subscribe({
+    next:(resApi:any)=>{
+      this.products = resApi
+    },
+    error: (error:any) =>{
+      console.log(error);
 
-  verPromocion(promocion:string){
-
-    let data = {}
-    if (promocion=="uno") {
-      data= {
-        descripcion:"Gafas de Sol Seen SNSF0021 Unisex Color Rosado",
-        referencia:" SKU 1767620 · Género Unisex",
-        precio:"$319.000",
-        imagen:"promocionUno.jpg"
-      }
     }
-    this.dialog.open(DialogDataExampleDialog, {
-      data
-    });
-  }
+  })
+}
 
 }
 @Component({

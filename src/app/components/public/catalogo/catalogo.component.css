@@ -1,32 +1,77 @@
-nav {
-  font-family: "Overpass", sans-serif;
-  font-weight: lighter;
-  font-size:medium;
+.card {
+display: flex;
+justify-content: space-around;
+margin-top: 55px;
+margin-left: 45px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+background-color: #cce3de;
 }
 
-ul {
-  list-style-type: none;
-  margin-top: 90px;
+.productos-container{
+margin-top: 70px;
 }
 
-li {
-  display: inline;
-  margin-right: 10px;
+.descripcionG{
+text-align: center;
+font-weight: bold;
 }
 
-li a {
-  text-decoration: none;
-  color: #007bff;
+.acomo{
+text-align: center;
+font-size: 20px;
 }
 
-li a:hover {
-  text-decoration: underline;
+.cuadros{
+text-align: center;
+font-size: medium;
+font-family: "Overpass", sans-serif;
 }
 
-li::after {
-  content: " > ";
+.card:hover {
+transform: translateY(-10px);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-li:last-child::after {
-  content: "";
+.card-img-top {
+object-fit: cover;
+height: 200px;
+width: 100%;
+}
+
+
+.btn-primary {
+background-color: #cce3de;
+border-color: #a4c3b2;
+}
+
+.btn-primary:hover {
+background-color: #a4c3b2;
+border-color: #a4c3b2;
+}
+
+@media (max-width: 768px) {
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.producto {
+  flex: 1 1 45%;
+  margin-bottom: 20px;
+}
+}
+
+@media (max-width: 480px) {
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.producto {
+  flex: 1 1 80%;
+  margin-bottom: 20px;
+}
 }
